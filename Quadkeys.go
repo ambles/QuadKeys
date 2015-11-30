@@ -3,7 +3,6 @@ package Quadkeys
 
 import (
 	"bytes"
-	"fmt"
 	"math"
 	"strconv"
 )
@@ -205,10 +204,7 @@ func QuadKeyToTileXY(quadKey string) (tileX int, tileY int, levelOfDetail uint) 
 }
 
 func LatLongToQuadKey(latitude float64, longitude float64, levelOfDetail uint) string {
-	fmt.Println("")
 	x, y := LatLongToPixelXY(latitude, longitude, levelOfDetail)
-	fmt.Println(x, y)
 	tileX, tileY := PixelXYToTileXY(x, y)
-	fmt.Println(tileX, tileY)
 	return TileXYToQuadKey(tileX, tileY, levelOfDetail)
 }
